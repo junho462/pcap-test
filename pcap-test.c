@@ -102,14 +102,13 @@ int main(int argc, char* argv[]) {
 		const u_char* payload = (const u_char*)tcp + tcp_header_len;
 		uint32_t payload_len = header->caplen - (LIBNET_ETH_H + ip_header_len + tcp_header_len);
 		uint32_t dump_len = payload_len > 20 ? 20 : payload_len;
-                
 
-                printf("%u bytes captured\n", header->caplen);
+		printf("%u bytes captured\n", header->caplen);
 		printf("Ethernet Header\n");
 		printf("src mac:");
-                print_mac(eth->ether_shost);
-                printf("\n");		
-                printf("dst mac:");
+		print_mac(eth->ether_shost);
+		printf("\n");
+		printf("dst mac:");
 		print_mac(eth->ether_dhost);
 		printf("\n");
 
